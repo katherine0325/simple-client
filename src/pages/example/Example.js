@@ -10,6 +10,8 @@ class Example extends Component {
   }
   componentDidMount() {
     ExampleStore.listen(this.onChange);
+
+    ExampleActions.init();
   }
 
   componentWillUnmount() {

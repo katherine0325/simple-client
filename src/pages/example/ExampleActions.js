@@ -4,8 +4,14 @@ class ExampleActions
 {
 	constructor() {
 		this.generateActions(
-			''
+			'initSuccess'
 		)
+	}
+
+	init() {
+		fetch('http://url.com/api/init', res => {
+			this.actions.initSuccess(res);
+		})
 	}
 }
 
