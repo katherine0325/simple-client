@@ -1,7 +1,7 @@
 const fs = require('fs');
 const targetName = process.argv[2];
 
-fs.mkdir(`src/pages/${targetName}`);
+fs.mkdirSync(`src/pages/${targetName.replace(/[A-Z]/g, match => ' ' + match.toLowerCase()).trim().replace(/\s/g, '-')}`);
 
 const exampleBuffer = fs.readFileSync('src/pages/Example/Example.js');
 const targetString = exampleBuffer.toString().replace(/Example/g, targetName);
